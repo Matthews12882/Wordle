@@ -11,8 +11,7 @@ answers = f.read().split("\n")
 f.close()
 
 print("Welcome to Wordle")
-#answer = answers[random.randint(0, len(answers) - 1)]
-answer = "crane"
+answer = answers[random.randint(0, len(answers) - 1)]
 while tries != 0:
     word = input("")
 
