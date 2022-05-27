@@ -11,7 +11,8 @@ answers = f.read().split("\n")
 f.close()
 
 print("Welcome to Wordle")
-answer = answers[random.randint(0, len(answers) - 1)]
+#answer = answers[random.randint(0, len(answers) - 1)]
+answer = "crane"
 while tries != 0:
     word = input("")
 
@@ -23,9 +24,14 @@ while tries != 0:
                 cprint(word[letter], "yellow", end="")
             else:
                 print(word[letter], end="")
+        if word == answer:
+            cprint("\nYou win!", "green")
+            break
 
-        print("\n")
+        print("")
 
         tries -= 1
     else:
         cprint("Try again (Invalid word)", "red")
+if tries == 0:
+    cprint(f"\nYou did not win.\nThe word was {answer}.\n:(", "red")
